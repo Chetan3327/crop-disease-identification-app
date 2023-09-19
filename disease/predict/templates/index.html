@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>plant-disease-detection</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input id="test" name="test" value="2" type="number">
+        <input id="hamster" name="hamster" type="file">
+        <button type="submit">click</button>
+    </form>
+    {% if number %}
+        <p>{{number}} is {{result}}</p>
+    {% endif %}
+    
+    {% if myimage %}
+        <p>{{myimage}}</p>
+        <img src={{myimage}} alt="" srcset="" width="100px" height="auto">
+    {% endif %}
+    {% if class %}
+        <p>{{class}}</p>
+    {% endif %}
+    {% if confidence %}
+        <p>{{confidence}}</p>
+    {% endif %}
+    
+</body>
+</html>
